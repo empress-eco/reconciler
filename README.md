@@ -1,69 +1,69 @@
-# Reconciler
+<div align="center">
+![Reconciler Logo](https://grow.empress.eco/uploads/default/original/2X/1/1f1e1044d3864269d2a613577edb9763890422ab.png
+<p align="center">
+Automate and simplify the reconciliation of GSTR 2B and Purchase Register for B2B transactions. Fast, efficient, and accurate.
+<br />
+<a href="https://grow.empress.eco/">Explore the Docs</a>
+·
+<a href="https://github.com/empress-eco/reconciler/issues">Report Bug</a>
+·
+<a href="https://github.com/empress-eco/reconciler/issues/new">Request Feature</a>
+</p>
+</div>
 
-Reconciliation tool for GSTR 2B and Purchase Register (PR) includes Purchase Invoice and CDN
+## About Reconciler
 
-## Installation
-Navigate to your bench folder
-```
-cd frappe-bench
-```
-Install Reconciler App For Frappe Version 12 and 13 
-```
-bench get-app reconciler https://github.com/aerele/reconciler.git --branch=master
+### 📖 What is Reconciler?
+Reconciler is a cutting-edge tool designed to revolutionize the reconciliation of GSTR 2B and Purchase Register (PR) for B2B transactions. Designed for businesses and financial professionals, Reconciler streamlines the reconciliation process, minimizes manual labor, and ensures accuracy.
+
+### 🌟 Key Features
+- **JSON Upload Tool:** Upload GSTR-2B JSON files easily with automatic generation of individual transactions.
+- **2B Entry:** Auto-generated entries with transaction and linked PR matching information.
+- **Matching Tool:** Reconcile 2B entries with linked PR's, create new invoices, and see differentiated views of linked entries.
+- **Summary Report:** Get a tax account head wise summary for easy reference and review.
+
+### 🛠 Built With
+- [Empress](https://github.com/Empress/Empress)
+- [Empress](https://github.com/Empress/Empress)
+
+## Getting Started
+
+### Prerequisites
+The Reconciler app is compatible with Empress Versions 12, 13, and 14.
+
+### Installation
+Navigate to your bench folder and follow the instructions below based on your Empress version:
+
+```sh
+# For Empress Version 12 and 13
+cd Empress-bench
+bench get-app reconciler https://github.com/empress-eco/reconciler.git --branch=master
+bench --site [site-name] install-app reconciler
+
+# For Empress Version 14
+cd Empress-bench
+bench get-app reconciler https://github.com/empress-eco/reconciler.git --branch=version-14
 bench --site [site-name] install-app reconciler
 ```
-Install Reconciler App For Frappe Version 14
-```
-bench get-app reconciler https://github.com/aerele/reconciler.git --branch=version-14
-bench --site [site-name] install-app reconciler
-```
-## Features
-  **Initial implementation is done only for B2B Transactions.
-  ### JSON Upload Tool
-  
-  1. Select appropriate fields and upload GSTR-2B JSON file which is downloaded from [GST portal](https://www.gst.gov.in/).
-  2. After creation, for individual transactions in json - 2B entries are automatically generated with the best match of PR.
-  3. At the end, you will get overall uploaded and matching summary.
 
-  ![photo_2021-04-21_21-43-26](https://user-images.githubusercontent.com/36359901/115586950-bd7c0280-a2ea-11eb-8c9c-33b2f986c706.jpg)
-  ![photo_2021-04-21_21-43-20](https://user-images.githubusercontent.com/36359901/115586937-b8b74e80-a2ea-11eb-87e5-b9a01551e2bb.jpg)
+## Usage
+Once installed, use the JSON Upload Tool, 2B Entry, Matching Tool, and Summary Report features to start reconciling your GSTR 2B and PR effectively and efficiently.
 
+## Contributing
+We welcome and appreciate community contributions! Here's how you can contribute:
 
-  ### 2B Entry
-  1. This is auto-generated entry, where you can find transaction and linked PR matching informations.
-  2. Here you have options like ```Rematch Results```, ```Link Supplier```, ```Create Invoice``` , ```Unlink PR```
-  3. Account freezing option also given in settings.
-  
-  ![2bentry](https://user-images.githubusercontent.com/36359901/115589932-0bded080-a2ee-11eb-82a2-0dfed3c919f7.gif)
+- Fork the Project
+- Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+- Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+- Push to the Branch (`git push origin feature/AmazingFeature`)
+- Open a Pull Request
 
-  ### Matching Tool
-  
-  1. In this report, you can reconcile the 2B entries with the linked PR's by moving the status from ```pending``` to ```accepted``` state or viceversa based on match status (Both Bulk and individual update actions are applicable).
-  2. ```Link/unlink PR``` with the corresponding 2B entry.
-  3. ```Create new invoice``` if no PR matched with 2B Entry.
-  4. Click on ```view``` option to see differentiate view of the linked entries.
-  5. You can only filter entries based on document date range or by return period.
-  6. View Type:
-      ```Supplier view``` - Supplier wise (tax difference, total pending document, total 2B and PR entry) will be shown.
-      ```Document view``` - (** By default it will show all supplier documents. You can also view documents by applying supplier or gstin filters,         otherwise just click on supplier or gstin in ```supplier view``` rows to auto apply filters)
-   4. Rows with Match status ```Exact Match``` will be highlighted with blue, ```Accepted``` state in green.
-      
-  ![report_filters](https://user-images.githubusercontent.com/36359901/115587545-6cb8d980-a2eb-11eb-9d6c-15bcbd3715cb.gif)
-  ![photo_2021-04-21_21-40-39](https://user-images.githubusercontent.com/36359901/115586576-5c542f00-a2ea-11eb-99d3-025aaf2ea449.jpg)
-  ![document_view](https://user-images.githubusercontent.com/36359901/115589979-1731fc00-a2ee-11eb-863f-5df9ad86e287.gif)
+## License
 
-  ### Summary Report
-  Here you can find tax account head wise summary
-  ![photo_2021-04-21_21-43-49](https://user-images.githubusercontent.com/36359901/115586963-c076f300-a2ea-11eb-9e42-fa04ed008bd1.jpg)
+This project is under the MIT License. Your contributions are also licensed under the MIT License.
 
-## Dependencies
+## Acknowledgements
 
-1. [Frappe](https://github.com/frappe/frappe)
-2. [ERPNext](https://github.com/frappe/erpnext)
-3. [Additional dependencies - V14: India Compliance)](https://github.com/resilient-tech/india-compliance)
-
-## TODO
-1. [Next Iteration Fixes](https://github.com/aerele/reconciler/issues/5)
-2. [Known Issues](https://github.com/aerele/reconciler/issues/11)
+We express our profound gratitude to the Empress Community for their foundational contributions to this project. Their innovation and dedication have been instrumental in building the tools and functionalities we rely on. We also thank the [aerele](https://github.com/aerele) team for creating and maintaining the Reconciler project. 
 
 ### Show some ❤️ by starring :star: :arrow_up: our repo!
